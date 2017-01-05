@@ -1,0 +1,31 @@
+{
+  "name": "vue-element-plugin",
+  "version": "1.0.0",
+  "description": "Based on element - UI plug-in package",
+  "main": "./src/index.js",
+  "scripts": {
+    "bootstrap": "yarn || npm i",
+    "test": "make test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hlwen/vue-element-plugin.git"
+  },
+  "keywords": [
+    "vue",
+    "element-ui\u001b[D\u001b[D\u001b[Ds-ui"
+  ],
+  "author": "hlwen",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hlwen/vue-element-plugin/issues"
+  },
+  "homepage": "https://github.com/hlwen/vue-element-plugin#readme",
+  "peerDependencies": {
+  },
+  "devDependencies":{
+    "vue": "^2.1.6",
+    "element-ui": "^1.0.9"
+
+  }
+}
