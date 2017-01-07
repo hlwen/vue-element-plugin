@@ -60,7 +60,7 @@
   import Vue from 'vue'
 
   module.exports = {
-    name: 'Grid',
+    name: 'grid',
     data: function () {
       return {
 
