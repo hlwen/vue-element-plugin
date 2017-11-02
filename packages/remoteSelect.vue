@@ -1,7 +1,8 @@
 <template>
   <el-select v-model="value11" placeholder="请选择" :loading="loading">
     <el-option
-      v-for="select in data"
+            v-for="(select,index) in data"
+            :key="index"
       :label="select[prop.name]"
       :value="select[prop.value]">
     </el-option>
@@ -9,7 +10,7 @@
 </template>
 
 <script>
-  import Lib from 'assets/Lib.js'
+//  import Lib from 'assets/Lib.js'
   import Vue from 'vue'
 
   module.exports = {

@@ -20,8 +20,9 @@
       </div>
       <div class="page" v-on:click.stop="">
         <el-pagination
+          @size-change="handleSizeChange"
           @current-change="handleCurrentChange"
-          layout="total,prev, pager, next"
+          layout="total, sizes, prev, pager, next, jumper"
           :total="total"
           :page-size="pageLength"
           :current-page="currPage">
@@ -32,7 +33,7 @@
 </template>
 
 <script>
-  import Lib from 'assets/Lib.js'
+//  import Lib from 'assets/Lib.js'
   export default {
     name: 'selectImage',
     data() {
@@ -47,6 +48,13 @@
     },
 
     props: {
+
+      url:{
+        type: String,
+        default:() =>{
+          return ''
+        }
+      },
       label:[String, Number],
       value: [String, Number],
       checkChange: Function
@@ -61,6 +69,10 @@
 //        this.label =data['filename'];
 //        this.$emit('input', data['fileId']);
       },
+      handleSizeChange(val) {
+        this.pageLength = val;
+        this.getList()
+      },
       handleCurrentChange(val) {//切换页
         this.currPage = val;
         this.getList()
@@ -74,7 +86,7 @@
           length : this.pageLength,
           start:start
         };
-        this.$http.post(Lib.C.devServerURI + "/api/file/list", query).then(function (response) {
+        this.$http.post(this.url, query).then(function (response) {
 
           var data = response.data;
           console.log(data);
@@ -98,7 +110,7 @@
   }
 </script>
 
-<style scoped>
+<style scoped  lang="less" type="text/css" rel="stylesheet/less">
   .option{
     max-width: 700px;
     background: none;
@@ -167,6 +179,10 @@
     float: left;
     width: 100%;
     text-align: right;
+    background-color: #fff;
+    span{
+      line-height: 28px!important;
+    }
   }
   .clearfix:before,
   .clearfix:after {

@@ -1,0 +1,20 @@
+{
+  "presets": [
+    "es2015",
+    "stage-3"
+  ],
+  "plugins": [
+//    ["component", [
+//      {
+//        "libraryName": "element-ui",
+//        "styleLibraryName": "theme-default"
+//      }
+//    ]],
+    "syntax-dynamic-import",
+    "transform-async-to-generator",
+    "transform-regenerator",
+    "transform-runtime",
+    "transform-object-assign",
+    "transform-vue-jsx"
+  ]
+}
